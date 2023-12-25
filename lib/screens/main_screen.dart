@@ -17,6 +17,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
       backgroundColor: Palette.backgroundColor,
       body: Stack(
         children: [
+          /// top background
           Positioned(
             top: 0,
             left: 0,
@@ -28,7 +29,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                     image: AssetImage('images/red.jpg'), fit: BoxFit.fill),
               ),
               child: Container(
-                /// offsets in each of the four directions(간격이나 여백을 지정하는데 사용)
+                /// offsets in each of the four directions (간격이나 여백을 지정하는데 사용)
                 padding: const EdgeInsets.only(top: 90, left: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,6 +74,8 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
               ),
             ),
           ),
+
+          /// loginSignup field
           Positioned(
             top: 180,
             child: Container(
@@ -158,6 +161,119 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                         ),
                       ),
                     ],
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 20),
+
+                    /// grouping multiple form field widgets
+                    child: Form(
+                      child: Column(
+                        children: [
+                          TextFormField(
+                            decoration: const InputDecoration(
+                              prefixIcon: Icon(
+                                Icons.account_circle,
+                                color: Palette.iconColor,
+                              ),
+
+                              /// Draws a rounded rectangle around an InputDecorator's container
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Palette.textColor1,
+                                ),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(35.0),
+                                ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Palette.textColor1,
+                                ),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(35.0),
+                                ),
+                              ),
+                              hintText: 'Username',
+                              hintStyle: TextStyle(
+                                fontSize: 14,
+                                color: Palette.textColor1,
+                              ),
+                              contentPadding: EdgeInsets.all(10),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          TextFormField(
+                            decoration: const InputDecoration(
+                              prefixIcon: Icon(
+                                Icons.account_circle,
+                                color: Palette.iconColor,
+                              ),
+
+                              /// Draws a rounded rectangle around an InputDecorator's container
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Palette.textColor1,
+                                ),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(35.0),
+                                ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Palette.textColor1,
+                                ),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(35.0),
+                                ),
+                              ),
+                              hintText: 'Username',
+                              hintStyle: TextStyle(
+                                fontSize: 14,
+                                color: Palette.textColor1,
+                              ),
+                              contentPadding: EdgeInsets.all(10),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          TextFormField(
+                            decoration: const InputDecoration(
+                              prefixIcon: Icon(
+                                Icons.account_circle,
+                                color: Palette.iconColor,
+                              ),
+
+                              /// Draws a rounded rectangle around an InputDecorator's container
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Palette.textColor1,
+                                ),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(35.0),
+                                ),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Palette.textColor1,
+                                ),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(35.0),
+                                ),
+                              ),
+                              hintText: 'Username',
+                              hintStyle: TextStyle(
+                                fontSize: 14,
+                                color: Palette.textColor1,
+                              ),
+                              contentPadding: EdgeInsets.all(10),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   )
                 ],
               ),
