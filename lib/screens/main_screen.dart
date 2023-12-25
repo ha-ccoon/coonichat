@@ -207,7 +207,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                           TextFormField(
                             decoration: const InputDecoration(
                               prefixIcon: Icon(
-                                Icons.account_circle,
+                                Icons.email,
                                 color: Palette.iconColor,
                               ),
 
@@ -228,7 +228,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                                   Radius.circular(35.0),
                                 ),
                               ),
-                              hintText: 'Username',
+                              hintText: 'Email',
                               hintStyle: TextStyle(
                                 fontSize: 14,
                                 color: Palette.textColor1,
@@ -242,7 +242,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                           TextFormField(
                             decoration: const InputDecoration(
                               prefixIcon: Icon(
-                                Icons.account_circle,
+                                Icons.lock,
                                 color: Palette.iconColor,
                               ),
 
@@ -263,7 +263,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                                   Radius.circular(35.0),
                                 ),
                               ),
-                              hintText: 'Username',
+                              hintText: 'Password',
                               hintStyle: TextStyle(
                                 fontSize: 14,
                                 color: Palette.textColor1,
