@@ -99,41 +99,63 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Column(
-                        children: [
-                          const Text(
-                            'LOGIN',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Palette.textColor1,
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            isSignUpScreen = false;
+                          });
+                        },
+                        child: Column(
+                          children: [
+                            Text(
+                              'LOGIN',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: !isSignUpScreen
+                                    ? Palette.activeColor
+                                    : Palette.textColor1,
+                              ),
                             ),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 3),
-                            height: 2,
-                            width: 55,
-                            color: Colors.orange,
-                          ),
-                        ],
+                            if (!isSignUpScreen)
+                              Container(
+                                margin: const EdgeInsets.only(top: 3),
+                                height: 2,
+                                width: 55,
+                                color: Colors.orange,
+                              ),
+                          ],
+                        ),
                       ),
-                      Column(
-                        children: [
-                          const Text(
-                            'SIGNUP',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Palette.textColor1,
+
+                      /// A widget that detects gestures
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            isSignUpScreen = true;
+                          });
+                        },
+                        child: Column(
+                          children: [
+                            Text(
+                              'SIGNUP',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: isSignUpScreen
+                                    ? Palette.activeColor
+                                    : Palette.textColor1,
+                              ),
                             ),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 3),
-                            height: 2,
-                            width: 55,
-                            color: Colors.orange,
-                          ),
-                        ],
+                            if (isSignUpScreen)
+                              Container(
+                                margin: const EdgeInsets.only(top: 3),
+                                height: 2,
+                                width: 55,
+                                color: Colors.orange,
+                              ),
+                          ],
+                        ),
                       ),
                     ],
                   )
