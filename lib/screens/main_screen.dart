@@ -72,7 +72,75 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                 ),
               ),
             ),
-          )
+          ),
+          Positioned(
+            top: 180,
+            child: Container(
+              padding: const EdgeInsets.all(20.0),
+              height: 280.0,
+
+              /// widget to rebuild automatically whenever any field of the MediaQueryData changes
+              /// in this case, devices
+              width: MediaQuery.of(context).size.width - 40,
+              margin: const EdgeInsets.symmetric(horizontal: 20.0),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.3),
+                    blurRadius: 15,
+                    spreadRadius: 5,
+                  )
+                ],
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Column(
+                        children: [
+                          const Text(
+                            'LOGIN',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Palette.textColor1,
+                            ),
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(top: 3),
+                            height: 2,
+                            width: 55,
+                            color: Colors.orange,
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          const Text(
+                            'SIGNUP',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Palette.textColor1,
+                            ),
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(top: 3),
+                            height: 2,
+                            width: 55,
+                            color: Colors.orange,
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
