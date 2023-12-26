@@ -279,6 +279,48 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
               ),
             ),
           ),
+          Positioned(
+            top: 430,
+            right: 0,
+            left: 0,
+            child: Center(
+              child: Container(
+                padding: const EdgeInsets.all(15),
+                height: 90,
+                width: 90,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(50)),
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [
+                        Colors.orange,
+                        Colors.red,
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(30),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.black.withOpacity(0.3),
+                          blurRadius: 1,
+                          spreadRadius: 1,
+
+                          /// 그림자가 위치할 위치를 정의 (x 축으로 0, y 축으로 1)
+                          offset: const Offset(0, 1) // spreadRadius: 5,
+                          )
+                    ],
+                  ),
+                  child: const Icon(
+                    Icons.arrow_forward,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
