@@ -38,7 +38,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                     RichText(
                       /// style texts
                       text: const TextSpan(
-                        text: 'Welcome',
+                        text: 'Welcome ',
                         style: TextStyle(
                           letterSpacing: 1.0,
                           fontSize: 25,
@@ -83,7 +83,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
               height: 280.0,
 
               /// widget to rebuild automatically whenever any field of the MediaQueryData changes
-              /// in this case, devices
+              /// ex. MediaQuery.sizeOf and MediaQuery.paddingOf
               width: MediaQuery.of(context).size.width - 40,
               margin: const EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
@@ -321,6 +321,32 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
               ),
             ),
           ),
+
+          // googleSignup button
+          Positioned(
+              top: MediaQuery.of(context).size.height - 125,
+              right: 0,
+              left: 0,
+              child: Column(
+                children: [
+                  const Text('or Sign up with'),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  TextButton.icon(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      primary: Colors.white,
+                      minimumSize: const Size(155, 40),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      backgroundColor: Palette.googleColor,
+                    ),
+                    icon: const Icon(Icons.add),
+                    label: const Text('Google'),
+                  ),
+                ],
+              )),
         ],
       ),
     );
