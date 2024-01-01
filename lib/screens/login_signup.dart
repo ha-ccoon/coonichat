@@ -196,20 +196,21 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                     ),
                   if (!isSignUpScreen)
                     const Column(
-                        children: [
-                          LoginSignUpTextFormField(
-                            prefixIcon: Icons.email,
-                            hintText: 'Email',
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          LoginSignUpTextFormField(
-                            prefixIcon: Icons.lock,
-                            hintText: 'Password',
-                          ),
-                        ],
-                      ),
+                      children: [
+                        LoginSignUpTextFormField(
+                          prefixIcon: Icons.email,
+                          hintText: 'Email',
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        LoginSignUpTextFormField(
+                          prefixIcon: Icons.lock,
+                          hintText: 'Password',
+                        ),
+                      ],
+                    ),
+                ],
               ),
             ),
           ),
@@ -272,7 +273,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                   TextButton.icon(
                     onPressed: () {},
                     style: TextButton.styleFrom(
-                      primary: Colors.white,
+                      foregroundColor: Colors.white,
                       minimumSize: const Size(155, 40),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
