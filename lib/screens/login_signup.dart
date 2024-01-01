@@ -1,4 +1,5 @@
 import 'package:coonichat/config/palette.dart';
+import 'package:coonichat/utils/input_form.dart';
 import 'package:flutter/material.dart';
 
 class LoginSignUpScreen extends StatefulWidget {
@@ -166,110 +167,27 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                     margin: const EdgeInsets.only(top: 20),
 
                     /// grouping multiple form field widgets
-                    child: Form(
+                    child: const Form(
                       child: Column(
                         children: [
-                          TextFormField(
-                            decoration: const InputDecoration(
-                              prefixIcon: Icon(
-                                Icons.account_circle,
-                                color: Palette.iconColor,
-                              ),
-
-                              /// Draws a rounded rectangle around an InputDecorator's container
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Palette.textColor1,
-                                ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(35.0),
-                                ),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Palette.textColor1,
-                                ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(35.0),
-                                ),
-                              ),
-                              hintText: 'Username',
-                              hintStyle: TextStyle(
-                                fontSize: 14,
-                                color: Palette.textColor1,
-                              ),
-                              contentPadding: EdgeInsets.all(10),
-                            ),
+                          LoginSignUpTextFormField(
+                            prefixIcon: Icons.account_circle,
+                            hintText: 'Username',
+                            // hintColor: Palette.textColor1,
                           ),
-                          const SizedBox(
+                          SizedBox(
                             height: 8,
                           ),
-                          TextFormField(
-                            decoration: const InputDecoration(
-                              prefixIcon: Icon(
-                                Icons.email,
-                                color: Palette.iconColor,
-                              ),
-
-                              /// Draws a rounded rectangle around an InputDecorator's container
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Palette.textColor1,
-                                ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(35.0),
-                                ),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Palette.textColor1,
-                                ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(35.0),
-                                ),
-                              ),
-                              hintText: 'Email',
-                              hintStyle: TextStyle(
-                                fontSize: 14,
-                                color: Palette.textColor1,
-                              ),
-                              contentPadding: EdgeInsets.all(10),
-                            ),
+                          LoginSignUpTextFormField(
+                            prefixIcon: Icons.email,
+                            hintText: 'Email',
                           ),
-                          const SizedBox(
+                          SizedBox(
                             height: 8,
                           ),
-                          TextFormField(
-                            decoration: const InputDecoration(
-                              prefixIcon: Icon(
-                                Icons.lock,
-                                color: Palette.iconColor,
-                              ),
-
-                              /// Draws a rounded rectangle around an InputDecorator's container
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Palette.textColor1,
-                                ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(35.0),
-                                ),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Palette.textColor1,
-                                ),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(35.0),
-                                ),
-                              ),
-                              hintText: 'Password',
-                              hintStyle: TextStyle(
-                                fontSize: 14,
-                                color: Palette.textColor1,
-                              ),
-                              contentPadding: EdgeInsets.all(10),
-                            ),
+                          LoginSignUpTextFormField(
+                            prefixIcon: Icons.lock,
+                            hintText: 'Password',
                           ),
                         ],
                       ),
@@ -322,7 +240,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
             ),
           ),
 
-          // googleSignup button
+          /// googleSignup button
           Positioned(
               top: MediaQuery.of(context).size.height - 125,
               right: 0,
