@@ -163,21 +163,40 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                       ),
                     ],
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(top: 20),
+                  if (isSignUpScreen)
+                    Container(
+                      margin: const EdgeInsets.only(top: 20),
 
-                    /// grouping multiple form field widgets
-                    child: const Form(
-                      child: Column(
+                      /// grouping multiple form field widgets
+                      child: const Form(
+                        child: Column(
+                          children: [
+                            LoginSignUpTextFormField(
+                              prefixIcon: Icons.account_circle,
+                              hintText: 'Username',
+                              // hintColor: Palette.textColor1,
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            LoginSignUpTextFormField(
+                              prefixIcon: Icons.email,
+                              hintText: 'Email',
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            LoginSignUpTextFormField(
+                              prefixIcon: Icons.lock,
+                              hintText: 'Password',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  if (!isSignUpScreen)
+                    const Column(
                         children: [
-                          LoginSignUpTextFormField(
-                            prefixIcon: Icons.account_circle,
-                            hintText: 'Username',
-                            // hintColor: Palette.textColor1,
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
                           LoginSignUpTextFormField(
                             prefixIcon: Icons.email,
                             hintText: 'Email',
@@ -191,12 +210,11 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                           ),
                         ],
                       ),
-                    ),
-                  )
-                ],
               ),
             ),
           ),
+
+          /// arrow button
           Positioned(
             top: 430,
             right: 0,
