@@ -1,5 +1,6 @@
+import 'package:coonichat/components/rounded_text_form.dart';
 import 'package:coonichat/config/palette.dart';
-import 'package:coonichat/utils/input_form.dart';
+import 'package:coonichat/screens/top_background.dart';
 import 'package:flutter/material.dart';
 
 class LoginSignUpScreen extends StatefulWidget {
@@ -10,7 +11,7 @@ class LoginSignUpScreen extends StatefulWidget {
 }
 
 class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
-  bool isSignUpScreen = true;
+  bool isSignUpScreen = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,57 +24,15 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
             top: 0,
             left: 0,
             right: 0,
-            child: Container(
-              height: 300,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('images/red.jpg'), fit: BoxFit.fill),
-              ),
-              child: Container(
-                /// offsets in each of the four directions (간격이나 여백을 지정하는데 사용)
-                padding: const EdgeInsets.only(top: 90, left: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    /// multiple different styles of text
-                    RichText(
-                      /// style texts
-                      text: const TextSpan(
-                        text: 'Welcome ',
-                        style: TextStyle(
-                          letterSpacing: 1.0,
-                          fontSize: 25,
-                          color: Colors.white,
-                        ),
-                        children: [
-                          TextSpan(
-                            text: 'to Yummy chat',
-                            style: TextStyle(
-                              letterSpacing: 1.0,
-                              fontSize: 25,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    /// A box with a specified size
-                    const SizedBox(
-                      height: 5.0,
-                    ),
-                    const Text(
-                      'Sign up to continue',
-                      style: TextStyle(
-                        letterSpacing: 1.0,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            child: isSignUpScreen
+                ? const TopBackground(
+                    titleText: 'to Yummy chat',
+                    continueText: 'Sign up to continue',
+                  )
+                : const TopBackground(
+                    titleText: 'back',
+                    continueText: 'Sign in to continue',
+                  ),
           ),
 
           /// loginSignup field
@@ -163,6 +122,36 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                       ),
                     ],
                   ),
+                  if (!isSignUpScreen)
+                    Container(
+                      margin: const EdgeInsets.only(top: 20),
+
+                      /// grouping multiple form field widgets
+                      child: const Form(
+                        child: Column(
+                          children: [
+                            RoundedTextForm(
+                              inputValue: 'Username',
+                              icon: Icons.account_circle,
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            RoundedTextForm(
+                              inputValue: 'Email',
+                              icon: Icons.email,
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            RoundedTextForm(
+                              inputValue: 'Password',
+                              icon: Icons.lock,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   if (isSignUpScreen)
                     Container(
                       margin: const EdgeInsets.only(top: 20),
@@ -171,51 +160,30 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                       child: const Form(
                         child: Column(
                           children: [
-                            LoginSignUpTextFormField(
-                              prefixIcon: Icons.account_circle,
-                              hintText: 'Username',
-                              // hintColor: Palette.textColor1,
+                            RoundedTextForm(
+                              inputValue: 'Username',
+                              icon: Icons.account_circle,
                             ),
                             SizedBox(
                               height: 8,
                             ),
-                            LoginSignUpTextFormField(
-                              prefixIcon: Icons.email,
-                              hintText: 'Email',
+                            RoundedTextForm(
+                              inputValue: 'Email',
+                              icon: Icons.email,
                             ),
                             SizedBox(
                               height: 8,
-                            ),
-                            LoginSignUpTextFormField(
-                              prefixIcon: Icons.lock,
-                              hintText: 'Password',
                             ),
                           ],
                         ),
                       ),
-                    ),
-                  if (!isSignUpScreen)
-                    const Column(
-                      children: [
-                        LoginSignUpTextFormField(
-                          prefixIcon: Icons.email,
-                          hintText: 'Email',
-                        ),
-                        SizedBox(
-                          height: 8,
-                        ),
-                        LoginSignUpTextFormField(
-                          prefixIcon: Icons.lock,
-                          hintText: 'Password',
-                        ),
-                      ],
                     ),
                 ],
               ),
             ),
           ),
 
-          /// arrow button
+          // arrow button
           Positioned(
             top: 430,
             right: 0,
@@ -259,7 +227,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
             ),
           ),
 
-          /// googleSignup button
+          // googleSignup button
           Positioned(
               top: MediaQuery.of(context).size.height - 125,
               right: 0,
@@ -273,7 +241,7 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
                   TextButton.icon(
                     onPressed: () {},
                     style: TextButton.styleFrom(
-                      foregroundColor: Colors.white,
+                      primary: Colors.white,
                       minimumSize: const Size(155, 40),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
