@@ -1,7 +1,7 @@
 import 'package:coonichat/components/rounded_text_form.dart';
 import 'package:coonichat/components/top_background.dart';
 import 'package:coonichat/config/palette.dart';
-import 'package:coonichat/routes.dart';
+import 'package:coonichat/screens/home.dart';
 import 'package:flutter/material.dart';
 
 class LoginSignUpScreen extends StatefulWidget {
@@ -235,14 +235,18 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.blue)),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Screen2()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Home(),
+                  ),
+                );
               },
-              child: Text(
+              child: const Text(
                 style: TextStyle(
                   color: Colors.black,
                 ),
-                'Go!',
+                'Router Test',
               ),
             ),
           ),
