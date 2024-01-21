@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../config/palette.dart';
+import '../../config/palette.dart';
 
 class SignUpTap extends StatefulWidget {
   final String tapText;

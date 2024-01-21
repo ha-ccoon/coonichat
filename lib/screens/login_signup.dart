@@ -1,6 +1,7 @@
 import 'package:coonichat/components/rounded_text_form.dart';
+import 'package:coonichat/components/top_background.dart';
 import 'package:coonichat/config/palette.dart';
-import 'package:coonichat/screens/top_background.dart';
+import 'package:coonichat/routes.dart';
 import 'package:flutter/material.dart';
 
 class LoginSignUpScreen extends StatefulWidget {
@@ -226,7 +227,25 @@ class _LoginSignUpScreenState extends State<LoginSignUpScreen> {
               ),
             ),
           ),
-
+          Positioned(
+            top: 600,
+            left: 100,
+            right: 100,
+            child: ElevatedButton(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.blue)),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Screen2()));
+              },
+              child: Text(
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+                'Go!',
+              ),
+            ),
+          ),
           // googleSignup button
           Positioned(
               top: MediaQuery.of(context).size.height - 125,
