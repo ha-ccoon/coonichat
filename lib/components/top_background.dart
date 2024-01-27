@@ -5,9 +5,11 @@ class TopBackground extends StatelessWidget {
   final String titleText;
   final String continueText;
 
-  const TopBackground(
-      {Key? key, required this.titleText, required this.continueText})
-      : super(key: key);
+  const TopBackground({
+    Key? key,
+    required this.titleText,
+    required this.continueText,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
